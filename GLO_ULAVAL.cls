@@ -21,6 +21,7 @@
 \RequirePackage{makecell}
 \RequirePackage[colorlinks=true,allcolors=blue]{hyperref}
 \RequirePackage{subfig}
+\RequirePackage{pifont}
 
 %Code Generating the Title Page
 \newif\ifbTeam
