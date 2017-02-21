@@ -12,7 +12,9 @@
 \RequirePackage{titlepic}
 \RequirePackage{graphicx}
 \RequirePackage{color}
+\RequirePackage[dvipsnames]{xcolor}
 \RequirePackage{tikz}
+\usetikzlibrary{positioning,calc,arrows,shapes,snakes,automata,backgrounds,petri}
 \RequirePackage{ifthen}
 \RequirePackage{textpos}
 \RequirePackage{calc}
@@ -22,6 +24,7 @@
 \RequirePackage[colorlinks=true,allcolors=blue]{hyperref}
 \RequirePackage{subfig}
 \RequirePackage{pifont}
+\RequirePackage[bottom]{footmisc}
 
 %Code Generating the Title Page
 \newif\ifbTeam
