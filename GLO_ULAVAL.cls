@@ -25,6 +25,11 @@
 \RequirePackage{subfig}
 \RequirePackage{pifont}
 \RequirePackage[bottom]{footmisc}
+%\RequirePackage{MnSymbol} %interference with amssymb http://ctan.mirror.rafal.ca/fonts/mnsymbol/MnSymbol.pdf
+\RequirePackage{mathdots}
+\RequirePackage{mathtools}
+\RequirePackage{array}
+\RequirePackage{multicol}
 
 %Code Generating the Title Page
 \newif\ifbTeam
@@ -125,6 +130,8 @@
 \newcommand{\faux}{\mbox{\texttt{faux}}}
 \newcommand{\eqdef}{\overset{{\mbox{\rm\tiny def}}}{=}}
 \newcommand{\tuple}[1]{\ensuremath{\left\langle #1 \right\rangle}}
+\newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}
+\newcommand{\indexFuncArrow}[2]{\overset{\uparrow}{\scalebox{0.8}{$#1(#2)$}}}
 \newcommand{\venn}{
 	\def\universe{(-2,-2) rectangle (2,1.65)}
 	\def\circleS{(0,0) ++(150:0.75) circle (1)}
