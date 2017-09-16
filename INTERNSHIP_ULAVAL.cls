@@ -76,7 +76,7 @@ texcl=false}
 \def\listingautorefname{Listage}
 \providecommand{\listingautorefname}{Listage}
 \renewcommand{\lstlistingname}{Listage}
-\renewcommand\listoflistingscaption{Liste de listages}
+\renewcommand\listoflistingscaption{Liste des listages}
 \renewcommand{\listoflistings}{\begingroup
 \listof{listing}{\listoflistingscaption}
 \addcontentsline{toc}{chapter}{\listoflistingscaption}
