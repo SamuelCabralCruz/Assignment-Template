@@ -56,10 +56,87 @@
 	\\[\baselineskip]
 	\stepcounter{Nb_Teamates}}
 	
+% Get the document class path
+\makeatletter
+\def\thepwd@default{./}
+\let\thepwd\thepwd@default
+\let\theclasspath\@empty
+
+\newcommand\getclasspath{%
+    \begingroup
+    \edef\filename{INTERNSHIP_ULAVAL.cls}%
+    \@onelevel@sanitize\filename%
+    \let\thepwd\thepwd@default
+    \let\theclasspath\@empty
+    \IfFileExists{\jobname.fls}{%
+        \openin\@inputcheck=\jobname.fls\relax
+        \endlinechar\m@ne
+        \readline\@inputcheck to \line
+        \expandafter\getclasspath@extr\line\relax\relax\relax\relax\relax
+        \expandafter\getclasspath@defs\expandafter{\filename}%
+        \loop
+            \readline\@inputcheck to \line
+            \@onelevel@sanitize\line
+            \expandafter\getclasspath@path\expandafter{\line}%
+            \ifeof\@inputcheck
+                \let\iterate\relax
+            \fi
+            \ifx\theclasspath\@empty
+        \repeat
+        \closein\@inputcheck
+    }{%
+        \PackageWarning{getclasspath}
+            {The required recorder file (.fls) was not found.\MessageBreak
+             Please compile with the '-recorder' option.\MessageBreak
+             Occurred}%
+    }%
+    \ifx\theclasspath\@empty
+        \let\theclasspath\thepwd
+    \fi
+    \edef\@tempa{%
+        \def\noexpand\thepwd{\thepwd}%
+        \def\noexpand\theclasspath{\theclasspath}%
+    }%
+    \expandafter
+    \endgroup
+    \@tempa
+}
+\def\getclasspath@extr#1#2#3#4#5\relax{%
+    \edef\@tempa{\detokenize{#1#2#3}}%
+    \edef\@tempb{\detokenize{PWD}}%
+    \ifx\@tempa\@tempb
+       \edef\thepwd{\detokenize{#4#5/}}%
+    \fi
+}
+
+\begingroup
+\catcode`I=12
+\catcode`N=12
+\catcode`P=12
+\catcode`U=12
+\catcode`T=12
+\gdef\getclasspath@defs#1{%
+    \def\getclasspath@@path ##1INPUT ##2#1\relax##3\relax##4\@nnil{%
+        \ifx\@empty##4\@empty\else
+            \def\theclasspath{##2}%
+        \fi
+    }%
+    \def\getclasspath@path##1{%
+        \getclasspath@@path##1\relax INPUT \@empty#1\relax{}\relax\@nnil
+    }%
+}
+\endgroup
+\makeatother
+\getclasspath
+\message{ClassPath: \theclasspath}
+\def\figureFolder{fig}
+\message{GraphicsPathDocumentClass: \theclasspath\figureFolder/}
+\graphicspath{{\theclasspath\figureFolder/}{./\figureFolder/}{.}}
+	
 \renewcommand{\maketitle}{
 	\begin{titlepage}
 		\begin{flushleft}
-			\includegraphics[width=0.25\textwidth, height=0.25\textheight,keepaspectratio]{C:/Users/Samuel/Documents/GLO/Title_Page/fig/ul_logo}
+			\includegraphics[width=0.25\textwidth, height=0.25\textheight,keepaspectratio]{ul_logo}
 			\ifbTeam
 					\hfill
 				No d'équipe: \theTeamNumber
