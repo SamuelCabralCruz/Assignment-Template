@@ -12,13 +12,14 @@
 \RequirePackage{titlepic}
 \RequirePackage{graphicx}
 \RequirePackage{color}
-\RequirePackage[dvipsnames]{xcolor}
+\RequirePackage[dvipsnames,table]{xcolor}
 \RequirePackage{tikz}
 \usetikzlibrary{positioning,calc,arrows,shapes,snakes,automata,backgrounds,petri}
 \RequirePackage{ifthen}
 \RequirePackage{textpos}
 \RequirePackage{calc}
 \RequirePackage{tabularx}
+\RequirePackage{booktabs}
 \RequirePackage{xstring}
 \RequirePackage{makecell}
 \RequirePackage[colorlinks=true,allcolors=blue]{hyperref}
@@ -186,6 +187,18 @@
 			\ifthenelse{\equal{#1}{nolabel}}{}{\label{fig:#1}}
 		\end{center}
 	\end{figure}}
+
+% Default Answering to QA assignment
+\newcommand{\QA}[2]{
+  \textbf{Question:}
+  \begin{adjustwidth}{2\parindent}{0pt}
+    #1
+  \end{adjustwidth}
+  \vspace{\baselineskip}
+  \hspace{\parindent}\textbf{Réponse:}
+  \begin{adjustwidth}{2\parindent}{0pt}
+    #2
+  \end{adjustwidth}}
 
 %Redifining the icons of itemize
 \newcommand{\modifyItemize}{
@@ -399,3 +412,34 @@
 		\noindent
 		#6
 	}{}
+
+% Specific functions for GIF-1002
+\newcommand{\verityTable}[3][nolabel]{
+	\begin{table}[ht]
+		\centering
+    % \rowcolors{2}{gray!25}{white}
+		\begin{tabular}{>{\bfseries}ccccc>{\bfseries}c}
+			% \toprule
+				\thead{Rang} & \thead{D} & \thead{C} & \thead{B} & \thead{A} & \thead{F} \\
+			\midrule
+				0  & 0 & 0 & 0 & 0 & \StrChar{#2}{1} \\
+				1  & 0 & 0 & 0 & 1 & \StrChar{#2}{2} \\
+				2  & 0 & 0 & 1 & 0 & \StrChar{#2}{3} \\
+				3  & 0 & 0 & 1 & 1 & \StrChar{#2}{4} \\
+				4  & 0 & 1 & 0 & 0 & \StrChar{#2}{5} \\
+				5  & 0 & 1 & 0 & 1 & \StrChar{#2}{6} \\
+				6  & 0 & 1 & 1 & 0 & \StrChar{#2}{7} \\
+				7  & 0 & 1 & 1 & 1 & \StrChar{#2}{8} \\
+				8  & 1 & 0 & 0 & 0 & \StrChar{#2}{9} \\
+				9  & 1 & 0 & 0 & 1 & \StrChar{#2}{10} \\
+				10 & 1 & 0 & 1 & 0 & \StrChar{#2}{11} \\
+				11 & 1 & 0 & 1 & 1 & \StrChar{#2}{12} \\
+				12 & 1 & 1 & 0 & 0 & \StrChar{#2}{13} \\
+				13 & 1 & 1 & 0 & 1 & \StrChar{#2}{14} \\
+				14 & 1 & 1 & 1 & 0 & \StrChar{#2}{15} \\
+				15 & 1 & 1 & 1 & 1 & \StrChar{#2}{16} \\
+			% \bottomrule
+		\end{tabular}
+		\caption{#3}
+		\ifthenelse{\equal{#2}{nolabel}}{}{\label{fig:#1}}
+	 \end{table}}
