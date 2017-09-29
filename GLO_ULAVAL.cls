@@ -35,6 +35,7 @@
 \RequirePackage{changepage}
 \RequirePackage{etoolbox}
 \RequirePackage[section]{placeins}
+\RequirePackage{karnaughmap}
 
 %Code Generating the Title Page
 \newif\ifbTeam
