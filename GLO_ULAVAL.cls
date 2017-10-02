@@ -190,7 +190,7 @@
 
 % Default Answering to QA assignment
 \newcommand{\QA}[2]{
-  \textbf{Question:}
+  \textbf{Énoncé:}
   \begin{adjustwidth}{2\parindent}{0pt}
     #1
   \end{adjustwidth}
@@ -226,7 +226,8 @@
 \newcommand{\faux}{\mbox{\texttt{faux}}}
 \newcommand{\eqdef}{\overset{{\mbox{\rm\tiny def}}}{=}}
 \newcommand{\tuple}[1]{\ensuremath{\left\langle #1 \right\rangle}}
-\newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}
+%\newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}
+\DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
 \newcommand{\indexFuncArrow}[2]{\overset{\uparrow}{\scalebox{0.8}{$#1(#2)$}}}
 \newcommand{\venn}{
 	\def\universe{(-2,-2) rectangle (2,1.65)}
