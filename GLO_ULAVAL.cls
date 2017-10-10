@@ -38,6 +38,8 @@
 \RequirePackage[section]{placeins}
 \RequirePackage{karnaughmap}
 
+\RequirePackage{minted}
+
 %Code Generating the Title Page
 \newif\ifbTeam
 \def\bool_Team{\bTeamtrue}
@@ -190,15 +192,23 @@
 
 % Default Answering to QA assignment
 \newcommand{\QA}[2]{
-  \textbf{Énoncé:}
+  \textbf{Énoncé}
   \begin{adjustwidth}{2\parindent}{0pt}
     #1
   \end{adjustwidth}
   \vspace{\baselineskip}
-  \hspace{\parindent}\textbf{Réponse:}
+  \hspace{\parindent}\textbf{Réponse}
   \begin{adjustwidth}{2\parindent}{0pt}
     #2
   \end{adjustwidth}}
+
+% Running Terminal Command and Outputing Standard Output to LaTeX
+\begingroup\makeatletter\endlinechar=\m@ne\everyeof{\noexpand}
+\edef\x{\endgroup\def\noexpand\TeXpath{\@@input|"which tex " }}\x
+\newcommand{\RunTerminal}[1]{
+	\begin{minipage}{\linewidth}
+		{\catcode`_=12 \ttfamily\input{|"#1"}}
+	\end{minipage}}
 
 %Redifining the icons of itemize
 \newcommand{\modifyItemize}{
