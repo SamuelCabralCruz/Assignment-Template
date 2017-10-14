@@ -42,6 +42,13 @@
 
 \RequirePackage{minted}
 
+\RequirePackage[nonumberlist,acronym,toc,style=long]{glossaries}
+\setlength\LTleft{0pt}
+\setlength\LTright{0pt}
+\setlength\glsdescwidth{0.8\hsize}
+\renewcommand{\glsnamefont}[1]{\textbf{#1}}
+\renewcommand*{\acronymname}{Liste des symboles et abréviations}
+
 %Code Generating the Title Page
 \newif\ifbTeam
 \def\bool_Team{\bTeamtrue}
