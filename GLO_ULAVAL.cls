@@ -6,6 +6,8 @@
 \RequirePackage[T1]{fontenc}
 \RequirePackage{lmodern}
 \RequirePackage[french]{babel}
+\RequirePackage[babel]{csquotes}
+\RequirePackage{bibentry}
 \RequirePackage[top=25mm, bottom=25mm, left=25mm, right=25mm]{geometry}
 \RequirePackage{amssymb}
 \RequirePackage{amsmath}
