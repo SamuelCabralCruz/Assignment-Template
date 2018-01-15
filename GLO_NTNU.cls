@@ -197,7 +197,7 @@
 
 % Default Answering to QA assignment
 \newcommand{\QA}[2]{
-  \textbf{Statement}
+  \hspace{\parindent}\textbf{Statement}
   \begin{adjustwidth}{2\parindent}{0pt}
     #1
   \end{adjustwidth}
