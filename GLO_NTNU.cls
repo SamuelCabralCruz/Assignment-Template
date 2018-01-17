@@ -226,3 +226,7 @@
 \newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
 \newcolumntype{Y}{>{\centering\arraybackslash}X}
 \renewcommand\theadfont{\bfseries}
+
+%Commenting equations
+\newcommand{\comments}[1]{
+    \hfill \langle \text{#1} \rangle}
