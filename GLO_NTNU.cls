@@ -7,6 +7,7 @@
 \RequirePackage{lmodern}
 \RequirePackage[english]{babel}
 \RequirePackage{bibentry}
+\RequirePackage{natbib}
 \RequirePackage[top=25mm, bottom=25mm, left=25mm, right=25mm]{geometry}
 \RequirePackage{amssymb}
 \RequirePackage{amsmath}
