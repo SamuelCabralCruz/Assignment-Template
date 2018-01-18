@@ -231,3 +231,10 @@
 %Commenting equations
 \newcommand{\comments}[1]{
     \hfill \langle \text{#1} \rangle}
+    
+%XOR operator
+\newcommand*\xor{\mathbin{\oplus}}
+
+%QED symbol
+\newcommand*{\QED}{\hfill\ensuremath{\square}}
+
