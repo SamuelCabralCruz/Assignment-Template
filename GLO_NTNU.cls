@@ -45,6 +45,7 @@
 
 % \RequiredPackage{appendix} leads to an error...?
 \usepackage[page,toc,titletoc,title]{appendix}
+\newcommand*{\Appendixautorefname}{Appendix}
 
 %Code Generating the Title Page
 \newif\ifbTeam
