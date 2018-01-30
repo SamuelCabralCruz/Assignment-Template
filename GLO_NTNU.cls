@@ -47,6 +47,9 @@
 \usepackage[page,toc,titletoc,title]{appendix}
 \newcommand*{\Appendixautorefname}{Appendix}
 
+% \RequiredPackage{lscape} leads to an error...?
+\usepackage{lscape}
+
 %Code Generating the Title Page
 \newif\ifbTeam
 \def\bool_Team{\bTeamtrue}
@@ -200,6 +203,15 @@
 		\end{center}
 	\end{figure}}
 
+\newcommand{\AddPictureLandscape}[5][nolabel]{
+    \begin{landscape}
+      \begin{figure}
+        \includegraphics[width=#2\hsize, height=#3\vsize]{#4}
+        \caption{#5}
+        \label{fig:#1}
+      \end{figure}
+    \end{landscape}}
+
 % Default Answering to QA assignment
 \newcommand{\QA}[2]{
   \hspace{\parindent}\textbf{Statement}
@@ -235,10 +247,9 @@
 %Commenting equations
 \newcommand{\comments}[1]{
     \hfill \langle \text{#1} \rangle}
-    
+
 %XOR operator
 \newcommand*\xor{\mathbin{\oplus}}
 
 %QED symbol
 \newcommand*{\QED}{\hfill\ensuremath{\square}}
-

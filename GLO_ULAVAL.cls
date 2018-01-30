@@ -49,6 +49,8 @@
 \renewcommand\appendixtocname{Annexes}
 \newcommand{\Annexeautorefname}{Annexe}
 
+\usepackage{lscape}
+
 %Code Generating the Title Page
 \newif\ifbTeam
 \def\bool_Team{\bTeamtrue}
@@ -198,6 +200,15 @@
 			\ifthenelse{\equal{#1}{nolabel}}{}{\label{fig:#1}}
 		\end{center}
 	\end{figure}}
+	
+\newcommand{\AddPictureLandscape}[5][nolabel]{
+    \begin{landscape}
+      \begin{figure}
+        \includegraphics[width=#2\hsize, height=#3\vsize]{#4}
+        \caption{#5}
+        \label{fig:#1}
+      \end{figure}
+    \end{landscape}}
 
 % Default Answering to QA assignment
 \newcommand{\QA}[2]{
