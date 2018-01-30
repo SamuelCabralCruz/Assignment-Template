@@ -43,6 +43,9 @@
 \RequirePackage{minted}
 \RequirePackage[babel]{csquotes}
 
+% \RequiredPackage{appendix} leads to an error...?
+\usepackage[page,toc,titletoc,title]{appendix}
+
 %Code Generating the Title Page
 \newif\ifbTeam
 \def\bool_Team{\bTeamtrue}
