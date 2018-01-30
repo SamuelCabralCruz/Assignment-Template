@@ -1,0 +1,29 @@
+\documentclass[12pt]{/home/samuel/Documents/GLO/latex/documentClass/GLO_NTNU}
+\begin{document}
+
+\tableofcontents
+
+\appendix
+\pretocmd{\chapter}{%
+ \clearpage
+ \pagenumbering{arabic}%
+ \renewcommand{\thepage}{\thechapter-\arabic{page}}%
+ }{}{}
+\begin{appendices}
+	\addtocontents{toc}{\protect\setcounter{tocdepth}{1}}
+	\makeatletter
+	\addtocontents{toc}{%
+	  \begingroup
+	  \let\protect\l@chapter\protect\l@section
+	  \let\protect\l@section\protect\l@subsection}
+	\makeatother
+
+	% \input{tex_file_name}
+	\chapter{My Appendix}
+	%\label{app:label}
+
+	\cleardoublepage
+	\addtocontents{toc}{\endgroup}
+\end{appendices}
+
+\end{document}
