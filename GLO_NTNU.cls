@@ -50,6 +50,15 @@
 % \RequiredPackage{lscape} leads to an error...?
 \usepackage{lscape}
 
+\usepackage{listings}
+\def\listingautorefname{Listing}
+\renewcommand{\listoflistings}{\begingroup
+\listof{listing}{\listoflistingscaption}
+\addcontentsline{toc}{chapter}{\listoflistingscaption}
+\endgroup}
+\newenvironment{longlisting}{\captionsetup{type=listing}}{}
+
+
 %Code Generating the Title Page
 \newif\ifbTeam
 \def\bool_Team{\bTeamtrue}

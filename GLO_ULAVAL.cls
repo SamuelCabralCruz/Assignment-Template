@@ -51,6 +51,20 @@
 
 \usepackage{lscape}
 
+
+\usepackage{listings}
+\def\listingautorefname{Listage}
+\providecommand{\listingautorefname}{Listage}
+\renewcommand\listingscaption{Listage}
+\renewcommand{\lstlistingname}{Listage}
+\renewcommand\listoflistingscaption{Liste des listages}
+\renewcommand{\listoflistings}{\begingroup
+\listof{listing}{\listoflistingscaption}
+\addcontentsline{toc}{chapter}{\listoflistingscaption}
+\endgroup}
+\newenvironment{longlisting}{\captionsetup{type=listing}}{}
+
+
 %Code Generating the Title Page
 \newif\ifbTeam
 \def\bool_Team{\bTeamtrue}
