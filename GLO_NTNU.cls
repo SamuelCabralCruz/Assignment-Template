@@ -253,3 +253,7 @@
 
 %QED symbol
 \newcommand*{\QED}{\hfill\ensuremath{\square}}
+
+%Full Ref for unnumbered chapters
+\newcommand{\fullref}[1]{\hyperref[#1]{\autoref*{#1}\nameref*{#1}}}
+

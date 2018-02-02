@@ -474,3 +474,7 @@
 		\caption{#3}
 		\ifthenelse{\equal{#2}{nolabel}}{}{\label{fig:#1}}
 	 \end{table}}
+	 
+%Full Ref for unnumbered chapters
+\newcommand{\fullref}[1]{\hyperref[#1]{\autoref*{#1}\nameref*{#1}}}
+
