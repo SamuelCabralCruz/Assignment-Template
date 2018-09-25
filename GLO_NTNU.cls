@@ -41,6 +41,7 @@
 \RequirePackage{karnaughmap}
 
 \RequirePackage{minted}
+\usemintedstyle{emacs}
 \RequirePackage[babel]{csquotes}
 
 % \RequiredPackage{appendix} leads to an error...?
