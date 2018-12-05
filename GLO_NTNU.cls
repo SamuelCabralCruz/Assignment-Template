@@ -34,7 +34,7 @@
 \RequirePackage{array}
 \RequirePackage{multicol}
 
-\RequirePackage{enumitem}
+\RequirePackage[shortlabels]{enumitem}
 \RequirePackage{changepage}
 \RequirePackage{etoolbox}
 \RequirePackage[section]{placeins}
