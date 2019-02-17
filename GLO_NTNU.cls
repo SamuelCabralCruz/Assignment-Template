@@ -21,6 +21,7 @@
 \RequirePackage{textpos}
 \RequirePackage{calc}
 \RequirePackage{tabularx}
+\RequirePackage{longtable}
 \RequirePackage{booktabs}
 \RequirePackage{xstring}
 \RequirePackage{makecell}
@@ -49,7 +50,7 @@
 \newcommand*{\Appendixautorefname}{Appendix}
 
 % \RequiredPackage{lscape} leads to an error...?
-\usepackage{lscape}
+\usepackage{pdflscape}
 
 \usepackage{listings}
 \def\listingautorefname{Listing}

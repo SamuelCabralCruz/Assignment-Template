@@ -21,6 +21,7 @@
 \RequirePackage{textpos}
 \RequirePackage{calc}
 \RequirePackage{tabularx}
+\RequirePackage{longtable}
 \RequirePackage{booktabs}
 \RequirePackage{xstring}
 \RequirePackage{makecell}
@@ -44,6 +45,8 @@
 \usemintedstyle{emacs}
 \RequirePackage[babel]{csquotes}
 
+% \newcommand\frenchTableCaption{Tableau}
+
 % \RequiredPackage{appendix} leads to an error...?
 \usepackage[page,toc,titletoc,title]{appendix}
 \renewcommand\appendixname{Annexes}
@@ -51,8 +54,8 @@
 \renewcommand\appendixtocname{Annexes}
 \newcommand{\Annexeautorefname}{Annexe}
 
-\usepackage{lscape}
-
+% \RequiredPackage{lscape} leads to an error...?
+\usepackage{pdflscape}
 
 \usepackage{listings}
 \def\listingautorefname{Listage}
