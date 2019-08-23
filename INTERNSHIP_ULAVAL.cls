@@ -32,10 +32,19 @@
 \RequirePackage{array}
 \RequirePackage{multicol}
 \RequirePackage{multirow}
-\RequirePackage{nomencl}
-\makenomenclature
-\renewcommand{\nomname}{Liste des symboles et abréviations}
-% to be used with: makeindex main.nlo -s nomencl.ist -o main.nls
+
+\RequirePackage[toc,nonumberlist]{glossaries}
+\AtBeginDocument{%
+	\setlength\LTleft{0pt}
+	\setlength\LTright{0pt}
+	\setlength\glsdescwidth{0.8\hsize}
+	\renewcommand{\glsnamefont}[1]{\textbf{#1}}
+	\renewcommand*{\glossaryname}{Liste des symboles et abréviations}}
+\makeglossaries
+% \renewcommand{\acronymname}{}
+\loadglsentries{gls/glossary}
+\glsaddall
+
 \RequirePackage[round,sort]{natbib}
 \bibliographystyle{plainnat}
 \RequirePackage[nottoc]{tocbibind}
