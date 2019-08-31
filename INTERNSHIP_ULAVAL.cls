@@ -219,7 +219,7 @@ texcl=false}
 	    \end{minipage}
 		\begin{center}
             \vspace{3 cm}
-						\textbf{\thePosition\ au sein de \theCompany} \\
+						\textbf{\thePosition\ chez \theCompany} \\
 		    \vspace{1 cm}
             \theReportType \\
             \vspace{4 cm}
